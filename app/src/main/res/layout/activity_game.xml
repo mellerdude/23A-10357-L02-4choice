@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_200"
-    tools:context=".MainActivity">
+    tools:context=".GameActivity">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/main_IMG_flag"
+        android:id="@+id/game_IMG_flag"
         android:layout_width="280dp"
         android:layout_height="200dp"
         android:layout_centerInParent="true"
@@ -16,10 +16,10 @@
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/main_LBL_name"
+        android:id="@+id/game_LBL_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/main_IMG_flag"
+        android:layout_above="@id/game_IMG_flag"
         android:layout_centerHorizontal="true"
         android:layout_margin="4dp"
         android:textStyle="bold"
@@ -35,7 +35,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/main_IMG_heart1"
+            android:id="@+id/game_IMG_heart1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -43,16 +43,7 @@
             app:srcCompat="@drawable/heart" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/main_IMG_heart2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/heart" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/main_IMG_heart3"
+            android:id="@+id/game_IMG_heart2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
@@ -61,7 +52,16 @@
             app:srcCompat="@drawable/heart" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/main_IMG_heart4"
+            android:id="@+id/game_IMG_heart3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/heart" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/game_IMG_heart4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
@@ -71,7 +71,7 @@
     </LinearLayout>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/main_LBL_score"
+        android:id="@+id/game_LBL_score"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
@@ -91,7 +91,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/main_BTN_yes"
+            android:id="@+id/game_BTN_yes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -103,7 +103,7 @@
             android:layout_height="0dp"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/main_BTN_no"
+            android:id="@+id/game_BTN_no"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
