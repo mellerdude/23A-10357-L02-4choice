@@ -77,6 +77,7 @@ public class GameActivity extends AppCompatActivity {
         scoreIntent.putExtra(ScoreActivity.KEY_SCORE,score);
         scoreIntent.putExtra(ScoreActivity.KEY_STATUS,status);
         startActivity(scoreIntent);
+        finish();
     }
 
 
