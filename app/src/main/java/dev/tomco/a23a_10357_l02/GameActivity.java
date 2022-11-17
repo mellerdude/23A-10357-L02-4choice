@@ -2,10 +2,13 @@ package dev.tomco.a23a_10357_l02;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
@@ -37,6 +40,8 @@ public class GameActivity extends AppCompatActivity {
         game_BTN_no.setOnClickListener(view -> {
             clicked(false);
         });
+
+
     }
 
     private void findViews() {
@@ -54,7 +59,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void clicked(boolean answer) {
-        gameManager.checkAnswer(answer);
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        gameManager.checkAnswer(v, answer);
         refreshUI();
     }
 
@@ -67,18 +73,16 @@ public class GameActivity extends AppCompatActivity {
             game_IMG_flag.setImageResource(gameManager.getCurrentFlag());
             game_LBL_name.setText(gameManager.getCurrentName());
             game_LBL_score.setText("" + gameManager.getScore());
-            if (gameManager.getWrong()!= 0)
-                game_IMG_hearts[game_IMG_hearts.length-gameManager.getWrong()].setVisibility(View.INVISIBLE);
+            if (gameManager.getWrong() != 0)
+                game_IMG_hearts[game_IMG_hearts.length - gameManager.getWrong()].setVisibility(View.INVISIBLE);
         }
     }
 
     private void openScoreScreen(String status, int score) {
         Intent scoreIntent = new Intent(this, ScoreActivity.class);
-        scoreIntent.putExtra(ScoreActivity.KEY_SCORE,score);
-        scoreIntent.putExtra(ScoreActivity.KEY_STATUS,status);
+        scoreIntent.putExtra(ScoreActivity.KEY_SCORE, score);
+        scoreIntent.putExtra(ScoreActivity.KEY_STATUS, status);
         startActivity(scoreIntent);
         finish();
     }
-
-
 }
